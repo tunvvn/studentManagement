@@ -3999,11 +3999,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "I:\\.C huongdan\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
+      "projectUniqueName": "I:\\gitV2\\studentManagement\\StudentManagement\\StudentManagement.csproj",
       "projectName": "StudentManagement",
-      "projectPath": "I:\\.C huongdan\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
+      "projectPath": "I:\\gitV2\\studentManagement\\StudentManagement\\StudentManagement.csproj",
       "packagesPath": "C:\\Users\\Win 10\\.nuget\\packages\\",
-      "outputPath": "I:\\.C huongdan\\StudentManagement\\StudentManagement\\obj\\",
+      "outputPath": "I:\\gitV2\\studentManagement\\StudentManagement\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Win 10\\AppData\\Roaming\\NuGet\\NuGet.Config",

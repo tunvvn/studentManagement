@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GUsiVikPhOYRIEiZoHQBUo+Gc7xettR5ZiuNv7Or128V/gHNq46i1Syv+soT8djUJWnMyAmhTpbk9jDxw3Pjxg==",
+  "dgSpecHash": "kj7e1BFQSWBqeLBVlFF/0oRF6C+SctmFFEJDD1v8aKtnyaJLbdHL+FUNqBLCFSEyhF0Ves7IttWhiDZZ46KtqQ==",
   "success": true,
-  "projectFilePath": "I:\\.C huongdan\\StudentManagement\\StudentManagement\\StudentManagement.csproj",
+  "projectFilePath": "I:\\gitV2\\studentManagement\\StudentManagement\\StudentManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Win 10\\.nuget\\packages\\aspnetcoreratelimit\\4.0.2\\aspnetcoreratelimit.4.0.2.nupkg.sha512",
     "C:\\Users\\Win 10\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
