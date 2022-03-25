@@ -1,0 +1,21 @@
+﻿using AutoMapper;
+using StudentManagement.Datas;
+using StudentManagement.Models;
+
+namespace StudentManagement.Configruations
+{
+    public class MapperInitializi: Profile
+    {
+        public MapperInitializi()
+        {
+
+            CreateMap<ApiUser, UserDTO>().ReverseMap();
+            CreateMap<Student, StudentDTO>().ReverseMap();
+            CreateMap<Student, CreateStudentDTO>().ReverseMap();
+            CreateMap<Class,ClassDTO>().ReverseMap();
+            CreateMap<Class, CreateClassDTO>().ReverseMap();
+
+
+        }
+    }
+}
