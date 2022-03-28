@@ -8,6 +8,6 @@ namespace StudentManagement.Services.ClassService
         Task<Class> CreateClassAsync(CreateClassDTO createClassDTO);
         Task<Class> UpdateClassAsync(int id, CreateClassDTO createClassDTO);
         Task<bool> DeleteClass(int id);
-        Task<List<ClassDTO>> GetAllClasses([FromQuery] RequestParams requestParams)
+        Task<List<ClassDTO>> GetAllClasses([FromQuery] RequestParams requestParams);
     }
 }
