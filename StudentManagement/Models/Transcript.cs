@@ -1,6 +1,4 @@
-﻿using StudentManagement.Models.Subject;
-
-namespace StudentManagement.Models
+﻿namespace StudentManagement.Models
 {
     public class Transcript
     {
@@ -11,6 +9,10 @@ namespace StudentManagement.Models
         public double Point { get; set; }
         public virtual Student Student { get; set; }
         public virtual Subjects Subject { get; set; }
+        public int CreateBy { get; set; }
+        public System.DateTime CreateDate { get; set; }
+        public int UpdateBy { get; set; }
+        public System.DateTime UpdateDate { get; set; }
 
     }
 }

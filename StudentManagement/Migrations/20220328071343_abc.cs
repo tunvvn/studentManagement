@@ -76,7 +76,6 @@ namespace StudentManagement.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ClassId = table.Column<int>(type: "int", nullable: false),
                     Block = table.Column<int>(type: "int", nullable: false),
                     Semester = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SlotPerWeek = table.Column<int>(type: "int", nullable: false),
@@ -206,7 +205,7 @@ namespace StudentManagement.Migrations
                     Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Birthday = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ClassId = table.Column<int>(type: "int", nullable: false),
+                    ClassId = table.Column<int>(type: "int", nullable: true),
                     FatherName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     MotherName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreateBy = table.Column<int>(type: "int", nullable: false),
@@ -221,8 +220,7 @@ namespace StudentManagement.Migrations
                         name: "FK_Students_Classes_ClassId",
                         column: x => x.ClassId,
                         principalTable: "Classes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -233,7 +231,7 @@ namespace StudentManagement.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DayOfWeek = table.Column<int>(type: "int", nullable: false),
                     SubjectId = table.Column<int>(type: "int", nullable: false),
-                    slot = table.Column<int>(type: "int", nullable: false),
+                    Slot = table.Column<int>(type: "int", nullable: false),
                     CreateBy = table.Column<int>(type: "int", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateBy = table.Column<int>(type: "int", nullable: false),
@@ -259,7 +257,11 @@ namespace StudentManagement.Migrations
                     StudentId = table.Column<int>(type: "int", nullable: false),
                     SubjectId = table.Column<int>(type: "int", nullable: false),
                     Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Point = table.Column<double>(type: "float", nullable: false)
+                    Point = table.Column<double>(type: "float", nullable: false),
+                    CreateBy = table.Column<int>(type: "int", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateBy = table.Column<int>(type: "int", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -283,8 +285,8 @@ namespace StudentManagement.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "20033862-9838-4779-8005-03367e8ab106", "24e95c7d-7d32-4884-89a2-751d05536e84", "ADMINSTRATOR", "ADMINSTRATOR" },
-                    { "a07cc7de-c2f5-4ea3-bdd6-f7ccf0dfa68d", "df92a4b1-d3fa-4f80-a91e-6f168a1a76eb", "User", "USER" }
+                    { "0828765e-d9fc-411b-b8e0-31e9e0fc01bf", "699861fb-0419-483c-985b-d8ca0aedccc0", "User", "USER" },
+                    { "73a57934-4f81-4d49-845c-41c413432dad", "7adb37e8-91d2-4118-b649-54896285eaf6", "ADMINSTRATOR", "ADMINSTRATOR" }
                 });
 
             migrationBuilder.InsertData(
@@ -296,6 +298,16 @@ namespace StudentManagement.Migrations
                     { 2, 11, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Pham thi thu thao", "11A3", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 3, 11, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Nguyen van tu", "11A5", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 4, 10, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "le dieu linh", "10A3", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Subjects",
+                columns: new[] { "Id", "Block", "CreateBy", "CreateDate", "Name", "Semester", "SlotPerWeek", "UpdateBy", "UpdateDate" },
+                values: new object[,]
+                {
+                    { 1, 12, 1, new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9214), "Toan", "1", 6, 1, new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9202) },
+                    { 2, 12, 1, new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9218), "Ly", "1", 3, 1, new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9217) },
+                    { 3, 11, 1, new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9221), "hoa", "1", 3, 1, new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9220) }
                 });
 
             migrationBuilder.InsertData(

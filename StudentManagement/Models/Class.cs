@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using StudentManagement.Models.DTO;
 
 namespace StudentManagement.Models
 {

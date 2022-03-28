@@ -1,4 +1,4 @@
-﻿using StudentManagement.Models.Subject;
+﻿using StudentManagement.Models;
 
 namespace StudentManagement.Models
 {

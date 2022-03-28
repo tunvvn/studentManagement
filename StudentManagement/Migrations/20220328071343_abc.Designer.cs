@@ -12,8 +12,8 @@ using StudentManagement.Datas;
 namespace StudentManagement.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20220325044719_xxx")]
-    partial class xxx
+    [Migration("20220328071343_abc")]
+    partial class abc
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -53,15 +53,15 @@ namespace StudentManagement.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c26cab89-17d4-41d0-8aa7-d3d377b613e0",
-                            ConcurrencyStamp = "3e0b6692-cb6d-4fb4-acd5-4602da2d9021",
+                            Id = "0828765e-d9fc-411b-b8e0-31e9e0fc01bf",
+                            ConcurrencyStamp = "699861fb-0419-483c-985b-d8ca0aedccc0",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "cb8c86ce-a912-4764-894b-2b52bc895ab1",
-                            ConcurrencyStamp = "a366caf9-2e1d-4f2e-b219-7c6801bc1bd3",
+                            Id = "73a57934-4f81-4d49-845c-41c413432dad",
+                            ConcurrencyStamp = "7adb37e8-91d2-4118-b649-54896285eaf6",
                             Name = "ADMINSTRATOR",
                             NormalizedName = "ADMINSTRATOR"
                         });
@@ -345,6 +345,9 @@ namespace StudentManagement.Migrations
                     b.Property<int>("DayOfWeek")
                         .HasColumnType("int");
 
+                    b.Property<int>("Slot")
+                        .HasColumnType("int");
+
                     b.Property<int>("SubjectId")
                         .HasColumnType("int");
 
@@ -353,9 +356,6 @@ namespace StudentManagement.Migrations
 
                     b.Property<DateTime>("UpdateDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("slot")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -379,7 +379,7 @@ namespace StudentManagement.Migrations
                     b.Property<DateTime?>("Birthday")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("ClassId")
+                    b.Property<int?>("ClassId")
                         .HasColumnType("int");
 
                     b.Property<int>("CreateBy")
@@ -538,36 +538,36 @@ namespace StudentManagement.Migrations
                             Id = 1,
                             Block = 12,
                             CreateBy = 1,
-                            CreateDate = new DateTime(2022, 3, 25, 11, 47, 19, 27, DateTimeKind.Local).AddTicks(5307),
+                            CreateDate = new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9214),
                             Name = "Toan",
                             Semester = "1",
                             SlotPerWeek = 6,
                             UpdateBy = 1,
-                            UpdateDate = new DateTime(2022, 3, 25, 11, 47, 19, 27, DateTimeKind.Local).AddTicks(5295)
+                            UpdateDate = new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9202)
                         },
                         new
                         {
                             Id = 2,
                             Block = 12,
                             CreateBy = 1,
-                            CreateDate = new DateTime(2022, 3, 25, 11, 47, 19, 27, DateTimeKind.Local).AddTicks(5311),
+                            CreateDate = new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9218),
                             Name = "Ly",
                             Semester = "1",
                             SlotPerWeek = 3,
                             UpdateBy = 1,
-                            UpdateDate = new DateTime(2022, 3, 25, 11, 47, 19, 27, DateTimeKind.Local).AddTicks(5310)
+                            UpdateDate = new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9217)
                         },
                         new
                         {
                             Id = 3,
                             Block = 11,
                             CreateBy = 1,
-                            CreateDate = new DateTime(2022, 3, 25, 11, 47, 19, 27, DateTimeKind.Local).AddTicks(5313),
+                            CreateDate = new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9221),
                             Name = "hoa",
                             Semester = "1",
                             SlotPerWeek = 3,
                             UpdateBy = 1,
-                            UpdateDate = new DateTime(2022, 3, 25, 11, 47, 19, 27, DateTimeKind.Local).AddTicks(5312)
+                            UpdateDate = new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9220)
                         });
                 });
 
@@ -578,6 +578,12 @@ namespace StudentManagement.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CreateBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<double>("Point")
                         .HasColumnType("float");
@@ -591,6 +597,12 @@ namespace StudentManagement.Migrations
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UpdateBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -667,9 +679,7 @@ namespace StudentManagement.Migrations
                 {
                     b.HasOne("StudentManagement.Models.Class", "Class")
                         .WithMany("Students")
-                        .HasForeignKey("ClassId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ClassId");
 
                     b.Navigation("Class");
                 });
@@ -677,7 +687,7 @@ namespace StudentManagement.Migrations
             modelBuilder.Entity("StudentManagement.Models.Transcript", b =>
                 {
                     b.HasOne("StudentManagement.Models.Student", "Student")
-                        .WithMany()
+                        .WithMany("Transcripts")
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -696,6 +706,11 @@ namespace StudentManagement.Migrations
             modelBuilder.Entity("StudentManagement.Models.Class", b =>
                 {
                     b.Navigation("Students");
+                });
+
+            modelBuilder.Entity("StudentManagement.Models.Student", b =>
+                {
+                    b.Navigation("Transcripts");
                 });
 #pragma warning restore 612, 618
         }

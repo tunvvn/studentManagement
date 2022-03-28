@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using StudentManagement.IRepository;
 using StudentManagement.Models;
-using StudentManagement.Models.Subject;
+using StudentManagement.Models.DTO;
 using StudentManagement.Services.StudentSerivce;
 using StudentManagement.Services.SubjectService;
 

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 
-namespace StudentManagement.Models
+namespace StudentManagement.Models.DTO
 {
     public class ClassDTO : CreateClassDTO
     {

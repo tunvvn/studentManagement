@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using StudentManagement.Models.Subject;
-
+using StudentManagement.Models;
+using StudentManagement.Models.DTO;
 namespace StudentManagement.Configrurations.Entities
 {
     public class SubjectConfiguation : IEntityTypeConfiguration<Subjects>

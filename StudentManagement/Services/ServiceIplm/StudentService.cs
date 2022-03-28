@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using StudentManagement.Datas;
+using StudentManagement.Models.DTO;
 using StudentManagement.IRepository;
 using StudentManagement.Models;
 

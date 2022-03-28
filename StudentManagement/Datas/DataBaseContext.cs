@@ -3,8 +3,7 @@ using StudentManagement.Configrurations.Entities;
 using StudentManagement.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using StudentManagement.Models.Subject;
-
+using StudentManagement.Models.DTO;
 namespace StudentManagement.Datas
 {
     public class DataBaseContext : IdentityDbContext<ApiUser>

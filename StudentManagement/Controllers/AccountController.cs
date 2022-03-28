@@ -5,7 +5,7 @@ using StudentManagement.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-
+using StudentManagement.Models.DTO;
 namespace StudentManagement.Controllers
 {
     [Route("api/[controller]")]

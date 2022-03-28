@@ -51,15 +51,15 @@ namespace StudentManagement.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "92582bea-7817-4afd-9b9f-228dfdb25078",
-                            ConcurrencyStamp = "0d8f383e-c3d5-4a41-9b1f-68aeedaf9349",
+                            Id = "0828765e-d9fc-411b-b8e0-31e9e0fc01bf",
+                            ConcurrencyStamp = "699861fb-0419-483c-985b-d8ca0aedccc0",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "3a04dbc8-f210-47eb-8db1-b5b46de0e736",
-                            ConcurrencyStamp = "1c96765d-3ea7-41a2-8a5f-b13dcd655db2",
+                            Id = "73a57934-4f81-4d49-845c-41c413432dad",
+                            ConcurrencyStamp = "7adb37e8-91d2-4118-b649-54896285eaf6",
                             Name = "ADMINSTRATOR",
                             NormalizedName = "ADMINSTRATOR"
                         });
@@ -536,36 +536,36 @@ namespace StudentManagement.Migrations
                             Id = 1,
                             Block = 12,
                             CreateBy = 1,
-                            CreateDate = new DateTime(2022, 3, 28, 11, 19, 52, 456, DateTimeKind.Local).AddTicks(1964),
+                            CreateDate = new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9214),
                             Name = "Toan",
                             Semester = "1",
                             SlotPerWeek = 6,
                             UpdateBy = 1,
-                            UpdateDate = new DateTime(2022, 3, 28, 11, 19, 52, 456, DateTimeKind.Local).AddTicks(1952)
+                            UpdateDate = new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9202)
                         },
                         new
                         {
                             Id = 2,
                             Block = 12,
                             CreateBy = 1,
-                            CreateDate = new DateTime(2022, 3, 28, 11, 19, 52, 456, DateTimeKind.Local).AddTicks(1968),
+                            CreateDate = new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9218),
                             Name = "Ly",
                             Semester = "1",
                             SlotPerWeek = 3,
                             UpdateBy = 1,
-                            UpdateDate = new DateTime(2022, 3, 28, 11, 19, 52, 456, DateTimeKind.Local).AddTicks(1967)
+                            UpdateDate = new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9217)
                         },
                         new
                         {
                             Id = 3,
                             Block = 11,
                             CreateBy = 1,
-                            CreateDate = new DateTime(2022, 3, 28, 11, 19, 52, 456, DateTimeKind.Local).AddTicks(1970),
+                            CreateDate = new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9221),
                             Name = "hoa",
                             Semester = "1",
                             SlotPerWeek = 3,
                             UpdateBy = 1,
-                            UpdateDate = new DateTime(2022, 3, 28, 11, 19, 52, 456, DateTimeKind.Local).AddTicks(1970)
+                            UpdateDate = new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9220)
                         });
                 });
 
@@ -576,6 +576,12 @@ namespace StudentManagement.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CreateBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<double>("Point")
                         .HasColumnType("float");
@@ -589,6 +595,12 @@ namespace StudentManagement.Migrations
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UpdateBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -673,7 +685,7 @@ namespace StudentManagement.Migrations
             modelBuilder.Entity("StudentManagement.Models.Transcript", b =>
                 {
                     b.HasOne("StudentManagement.Models.Student", "Student")
-                        .WithMany()
+                        .WithMany("Transcripts")
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -692,6 +704,11 @@ namespace StudentManagement.Migrations
             modelBuilder.Entity("StudentManagement.Models.Class", b =>
                 {
                     b.Navigation("Students");
+                });
+
+            modelBuilder.Entity("StudentManagement.Models.Student", b =>
+                {
+                    b.Navigation("Transcripts");
                 });
 #pragma warning restore 612, 618
         }

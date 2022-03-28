@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-
+using StudentManagement.Models.DTO;
 namespace StudentManagement.Models
 {
     public class Student
@@ -17,6 +17,7 @@ namespace StudentManagement.Models
         public int UpdateBy { get; set; }
         public System.DateTime UpdateDate { get; set; }
         public virtual Class Class { get; set; }
+        public virtual IList<Transcript> Transcripts { get; set; }
 
     }
 

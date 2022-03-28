@@ -1,4 +1,4 @@
-﻿namespace StudentManagement.Models.Subject
+﻿namespace StudentManagement.Models.DTO
 {
     public class SubjectDTO : CreateSubjectDTO
     {

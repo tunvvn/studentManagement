@@ -1,7 +1,6 @@
 ﻿using StudentManagement.Datas;
 using StudentManagement.IRepository;
 using StudentManagement.Models;
-using StudentManagement.Models.Subject;
 
 namespace StudentManagement.Repository
 {

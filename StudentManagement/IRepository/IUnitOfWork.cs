@@ -1,5 +1,4 @@
 ﻿using StudentManagement.Models;
-using StudentManagement.Models.Subject;
 
 namespace StudentManagement.IRepository
 {

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StudentManagement.IRepository;
 using StudentManagement.Models;
+using StudentManagement.Models.DTO;
 using StudentManagement.Services.ClassService;
 
 namespace StudentManagement.Controllers
@@ -69,7 +70,7 @@ namespace StudentManagement.Controllers
             try
             {
                 var result = await iclassService.UpdateClassAsync(id, createClassDTO);
-                return Ok(200);
+                return Ok(result);
             }
             catch (Exception e)
             {

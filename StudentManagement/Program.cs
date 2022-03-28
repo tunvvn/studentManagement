@@ -123,7 +123,7 @@ app.UseSwaggerUI(options =>
 {
     string path = string.IsNullOrWhiteSpace(options.RoutePrefix) ? "." : "..";
 
-    options.SwaggerEndpoint($"{path}/swagger/v1/swagger.json", "Hotel Listening V1");
+    options.SwaggerEndpoint($"{path}/swagger/v1/swagger.json", "Student Management V1");
     // options.RoutePrefix = string.Empty;
 });
 app.ConfigureExeptionHandle();
@@ -133,9 +133,9 @@ app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>
 {
-    //endpoints.MapControllerRoute(
-    //    name: "default",
-    //    pattern: "{controller= Home}/{action=Index}/{id?}");
+    endpoints.MapControllerRoute(
+    name: "default",
+    pattern: "{controller= Home}/{action=Index}/{id?}");
     endpoints.MapControllers();
 });
 

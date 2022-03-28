@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using StudentManagement.Datas;
 using StudentManagement.Models;
-using StudentManagement.Models.Subject;
+using StudentManagement.Models.DTO;
 
 namespace StudentManagement.Configruations
 {

@@ -2,7 +2,7 @@
 using AutoMapper;
 using StudentManagement.Datas;
 using StudentManagement.IRepository;
-using StudentManagement.Models;
+using StudentManagement.Models.DTO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace StudentManagement.Services.ClassService

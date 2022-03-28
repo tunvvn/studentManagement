@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StudentManagement.Models;
+using StudentManagement.Models.DTO;
+
 
 namespace StudentManagement.Services.StudentSerivce
 {

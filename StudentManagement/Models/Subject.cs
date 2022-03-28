@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using StudentManagement.Models.Subject;
+using StudentManagement.Models.DTO;
 
-namespace StudentManagement.Models.Subject
+namespace StudentManagement.Models
 {
     public class Subjects
     {
