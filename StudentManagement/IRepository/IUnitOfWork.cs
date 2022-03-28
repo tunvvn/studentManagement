@@ -6,6 +6,7 @@ namespace StudentManagement.IRepository
     {
         IGenericRespository<Student> Students { get; }
         IGenericRespository<Class> Classes { get; }
+        IGenericRespository<Transcript> Transcripts { get; }
 
         IGenericRespository<Subjects> Subjects { get; }
 

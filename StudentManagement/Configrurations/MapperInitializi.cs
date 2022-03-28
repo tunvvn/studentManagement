@@ -17,6 +17,8 @@ namespace StudentManagement.Configruations
             CreateMap<Class, CreateClassDTO>().ReverseMap();
             CreateMap<Subjects, SubjectDTO>().ReverseMap();
             CreateMap<Subjects, CreateSubjectDTO>().ReverseMap();
+            CreateMap<Transcript, CreateTranscriptDTO>().ReverseMap();
+            CreateMap<Transcript, TranscriptDTO>().ReverseMap();
 
 
         }

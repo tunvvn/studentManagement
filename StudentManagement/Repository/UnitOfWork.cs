@@ -11,6 +11,8 @@ namespace StudentManagement.Repository
         private IGenericRespository<Class> _classes;
         private IGenericRespository<Student> _students;
         private IGenericRespository<Subjects> _subjects;
+        private IGenericRespository<Transcript> _transcripts;
+
 
         public UnitOfWork(DataBaseContext dataBaseContext)
         {
@@ -20,6 +22,7 @@ namespace StudentManagement.Repository
 
         public IGenericRespository<Student> Students => _students ??= new GenericRespository<Student>(_dataBaseContext);
         public IGenericRespository<Class> Classes => _classes ??= new GenericRespository<Class>(_dataBaseContext);
+        public IGenericRespository<Transcript> Transcripts => _transcripts ??= new GenericRespository<Transcript>(_dataBaseContext);
 
         public IGenericRespository<Subjects> Subjects => _subjects ??= new GenericRespository<Subjects>(_dataBaseContext);
 

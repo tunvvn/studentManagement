@@ -67,7 +67,7 @@ namespace StudentManagement.Controllers
 
         //[Authorize(Roles = "ADMINSTRATOR")]
         [HttpDelete("{id:int}")]
-        public async Task<IActionResult> DeleteClass(int id)
+        public async Task<IActionResult> DeleteTranscript(int id)
         {
             if (!ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace StudentManagement.Controllers
             }
             catch (Exception ex)
             {
-                ilogger.LogError(ex, $"Something Wrong {nameof(DeleteClass)}");
+                ilogger.LogError(ex, $"Something Wrong {nameof(DeleteTranscript)}");
                 return StatusCode(500);
 
             }
