@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using StudentManagement.Datas;
 using StudentManagement.Models;
+using StudentManagement.Models.Subject;
 
 namespace StudentManagement.Configruations
 {
@@ -14,6 +15,8 @@ namespace StudentManagement.Configruations
             CreateMap<Student, CreateStudentDTO>().ReverseMap();
             CreateMap<Class,ClassDTO>().ReverseMap();
             CreateMap<Class, CreateClassDTO>().ReverseMap();
+            CreateMap<Subjects, SubjectDTO>().ReverseMap();
+            CreateMap<Subjects, CreateSubjectDTO>().ReverseMap();
 
 
         }

@@ -1,6 +1,7 @@
 ﻿using StudentManagement.Datas;
 using StudentManagement.IRepository;
 using StudentManagement.Models;
+using StudentManagement.Models.Subject;
 
 namespace StudentManagement.Repository
 {
@@ -10,6 +11,7 @@ namespace StudentManagement.Repository
 
         private IGenericRespository<Class> _classes;
         private IGenericRespository<Student> _students;
+        private IGenericRespository<Subjects> _subjects;
 
         public UnitOfWork(DataBaseContext dataBaseContext)
         {
@@ -19,6 +21,8 @@ namespace StudentManagement.Repository
 
         public IGenericRespository<Student> Students => _students ??= new GenericRespository<Student>(_dataBaseContext);
         public IGenericRespository<Class> Classes => _classes ??= new GenericRespository<Class>(_dataBaseContext);
+
+        public IGenericRespository<Subjects> Subjects => _subjects ??= new GenericRespository<Subjects>(_dataBaseContext);
 
         public void Dispose()
         {
@@ -30,6 +34,11 @@ namespace StudentManagement.Repository
         public async Task Save()
         {
            await _dataBaseContext.SaveChangesAsync();
+        }
+
+        public int SaveChange()
+        {
+           return _dataBaseContext.SaveChanges();
         }
     }
 }

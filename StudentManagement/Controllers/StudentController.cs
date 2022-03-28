@@ -69,8 +69,8 @@ namespace StudentManagement.Controllers
              }*/
             try
             {
-                 var result = _istudentService.CreateStudentAsync(createStudentDTO);
-                return Ok(200);
+                 var result = await _istudentService.CreateStudentAsync(createStudentDTO);
+                return Ok(result);
             }
             catch (Exception e)
             {
@@ -95,8 +95,8 @@ namespace StudentManagement.Controllers
             try
             {
 
-                var student = _istudentService.UpdateStudentAsync(id, createStudentDTO);
-                return Ok(200);
+                var student = await _istudentService.UpdateStudentAsync(id, createStudentDTO);
+                return Ok(student);
             }
             catch (Exception e)
             {

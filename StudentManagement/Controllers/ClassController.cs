@@ -53,7 +53,7 @@ namespace StudentManagement.Controllers
             }
             try
             {
-                var clas = iclassService.CreateClassAsync(createClassDTO);
+                var clas = await iclassService.CreateClassAsync(createClassDTO);
                 return Ok(clas);
 
             }
@@ -73,26 +73,7 @@ namespace StudentManagement.Controllers
          
             try
             {
-                var clas = await iunitOfWork.Students.Get(q => q.Id==(id));
-                if (clas == null)
-                {
-                    ilogger.LogError($"Invaild PUT attempt in {nameof(UpdateClass)}");
-                    return BadRequest(ModelState);
-                }
-                if (createClassDTO.StudentIds.Count() > 0)
-                {
-                    foreach (int s in createClassDTO.StudentIds)
-                    {
-                        var student = await iunitOfWork.Students.Get(q => q.Id == (id));
-                        student.ClassId = student.Id;
-                        iunitOfWork.Students.Update(student);
-                        await iunitOfWork.Save();
-                    }
-                        
-                }
-                imapper.Map(createClassDTO, clas);
-                iunitOfWork.Students.Update(clas);
-                await iunitOfWork.Save();
+                var result = await iclassService.UpdateClassAsync(id, createClassDTO);
                 return Ok(200);
             }
             catch (Exception e)

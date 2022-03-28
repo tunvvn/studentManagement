@@ -12,8 +12,8 @@ using StudentManagement.Datas;
 namespace StudentManagement.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20220324103921_abc")]
-    partial class abc
+    [Migration("20220325044719_xxx")]
+    partial class xxx
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -53,15 +53,15 @@ namespace StudentManagement.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "d4d62d56-d3d4-44ca-b338-f6ac3d8c6dea",
-                            ConcurrencyStamp = "6fbe192b-dd77-423f-b6f9-b8d6386140c4",
+                            Id = "c26cab89-17d4-41d0-8aa7-d3d377b613e0",
+                            ConcurrencyStamp = "3e0b6692-cb6d-4fb4-acd5-4602da2d9021",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "dd2f758d-6257-4aaf-80a4-7532111fb252",
-                            ConcurrencyStamp = "b2442445-3014-438e-b1db-dffc8d815244",
+                            Id = "cb8c86ce-a912-4764-894b-2b52bc895ab1",
+                            ConcurrencyStamp = "a366caf9-2e1d-4f2e-b219-7c6801bc1bd3",
                             Name = "ADMINSTRATOR",
                             NormalizedName = "ADMINSTRATOR"
                         });
@@ -494,7 +494,7 @@ namespace StudentManagement.Migrations
                         });
                 });
 
-            modelBuilder.Entity("StudentManagement.Models.Subject", b =>
+            modelBuilder.Entity("StudentManagement.Models.Subject.Subjects", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -505,22 +505,22 @@ namespace StudentManagement.Migrations
                     b.Property<int>("Block")
                         .HasColumnType("int");
 
-                    b.Property<int>("ClassId")
-                        .HasColumnType("int");
-
                     b.Property<int>("CreateBy")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Semester")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SlotPerWeek")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("SlotPerWeek")
+                        .HasColumnType("int");
 
                     b.Property<int>("UpdateBy")
                         .HasColumnType("int");
@@ -528,13 +528,47 @@ namespace StudentManagement.Migrations
                     b.Property<DateTime>("UpdateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.ToTable("Subjects");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Block = 12,
+                            CreateBy = 1,
+                            CreateDate = new DateTime(2022, 3, 25, 11, 47, 19, 27, DateTimeKind.Local).AddTicks(5307),
+                            Name = "Toan",
+                            Semester = "1",
+                            SlotPerWeek = 6,
+                            UpdateBy = 1,
+                            UpdateDate = new DateTime(2022, 3, 25, 11, 47, 19, 27, DateTimeKind.Local).AddTicks(5295)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Block = 12,
+                            CreateBy = 1,
+                            CreateDate = new DateTime(2022, 3, 25, 11, 47, 19, 27, DateTimeKind.Local).AddTicks(5311),
+                            Name = "Ly",
+                            Semester = "1",
+                            SlotPerWeek = 3,
+                            UpdateBy = 1,
+                            UpdateDate = new DateTime(2022, 3, 25, 11, 47, 19, 27, DateTimeKind.Local).AddTicks(5310)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Block = 11,
+                            CreateBy = 1,
+                            CreateDate = new DateTime(2022, 3, 25, 11, 47, 19, 27, DateTimeKind.Local).AddTicks(5313),
+                            Name = "hoa",
+                            Semester = "1",
+                            SlotPerWeek = 3,
+                            UpdateBy = 1,
+                            UpdateDate = new DateTime(2022, 3, 25, 11, 47, 19, 27, DateTimeKind.Local).AddTicks(5312)
+                        });
                 });
 
             modelBuilder.Entity("StudentManagement.Models.Transcript", b =>
@@ -620,7 +654,7 @@ namespace StudentManagement.Migrations
 
             modelBuilder.Entity("StudentManagement.Models.Schedule", b =>
                 {
-                    b.HasOne("StudentManagement.Models.Subject", "Subject")
+                    b.HasOne("StudentManagement.Models.Subject.Subjects", "Subject")
                         .WithMany()
                         .HasForeignKey("SubjectId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -648,7 +682,7 @@ namespace StudentManagement.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("StudentManagement.Models.Subject", "Subject")
+                    b.HasOne("StudentManagement.Models.Subject.Subjects", "Subject")
                         .WithMany()
                         .HasForeignKey("SubjectId")
                         .OnDelete(DeleteBehavior.Cascade)

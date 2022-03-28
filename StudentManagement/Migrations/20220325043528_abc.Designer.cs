@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StudentManagement.Datas;
 
@@ -11,9 +12,10 @@ using StudentManagement.Datas;
 namespace StudentManagement.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    partial class DataBaseContextModelSnapshot : ModelSnapshot
+    [Migration("20220325043528_abc")]
+    partial class abc
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,15 +53,15 @@ namespace StudentManagement.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c26cab89-17d4-41d0-8aa7-d3d377b613e0",
-                            ConcurrencyStamp = "3e0b6692-cb6d-4fb4-acd5-4602da2d9021",
+                            Id = "a07cc7de-c2f5-4ea3-bdd6-f7ccf0dfa68d",
+                            ConcurrencyStamp = "df92a4b1-d3fa-4f80-a91e-6f168a1a76eb",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "cb8c86ce-a912-4764-894b-2b52bc895ab1",
-                            ConcurrencyStamp = "a366caf9-2e1d-4f2e-b219-7c6801bc1bd3",
+                            Id = "20033862-9838-4779-8005-03367e8ab106",
+                            ConcurrencyStamp = "24e95c7d-7d32-4884-89a2-751d05536e84",
                             Name = "ADMINSTRATOR",
                             NormalizedName = "ADMINSTRATOR"
                         });
@@ -503,6 +505,9 @@ namespace StudentManagement.Migrations
                     b.Property<int>("Block")
                         .HasColumnType("int");
 
+                    b.Property<int>("ClassId")
+                        .HasColumnType("int");
+
                     b.Property<int>("CreateBy")
                         .HasColumnType("int");
 
@@ -529,44 +534,6 @@ namespace StudentManagement.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Subjects");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Block = 12,
-                            CreateBy = 1,
-                            CreateDate = new DateTime(2022, 3, 25, 11, 47, 19, 27, DateTimeKind.Local).AddTicks(5307),
-                            Name = "Toan",
-                            Semester = "1",
-                            SlotPerWeek = 6,
-                            UpdateBy = 1,
-                            UpdateDate = new DateTime(2022, 3, 25, 11, 47, 19, 27, DateTimeKind.Local).AddTicks(5295)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Block = 12,
-                            CreateBy = 1,
-                            CreateDate = new DateTime(2022, 3, 25, 11, 47, 19, 27, DateTimeKind.Local).AddTicks(5311),
-                            Name = "Ly",
-                            Semester = "1",
-                            SlotPerWeek = 3,
-                            UpdateBy = 1,
-                            UpdateDate = new DateTime(2022, 3, 25, 11, 47, 19, 27, DateTimeKind.Local).AddTicks(5310)
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Block = 11,
-                            CreateBy = 1,
-                            CreateDate = new DateTime(2022, 3, 25, 11, 47, 19, 27, DateTimeKind.Local).AddTicks(5313),
-                            Name = "hoa",
-                            Semester = "1",
-                            SlotPerWeek = 3,
-                            UpdateBy = 1,
-                            UpdateDate = new DateTime(2022, 3, 25, 11, 47, 19, 27, DateTimeKind.Local).AddTicks(5312)
-                        });
                 });
 
             modelBuilder.Entity("StudentManagement.Models.Transcript", b =>

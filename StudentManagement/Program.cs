@@ -9,7 +9,9 @@ using StudentManagement.Datas;
 using StudentManagement.IRepository;
 using StudentManagement.Repository;
 using StudentManagement.Services;
+using StudentManagement.Services.ClassService;
 using StudentManagement.Services.StudentSerivce;
+using StudentManagement.Services.SubjectService;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -36,6 +38,9 @@ builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddScoped<IAuthManager, AuthManager>();
 builder.Services.AddScoped<IStudentService, StudentService>();
+builder.Services.AddScoped<IClassService, ClassService>();
+builder.Services.AddScoped<ISubjectService, SubjectService>();
+
 builder.Services.ConfigureJWT(builder.Configuration);
 builder.Services.CongigureVersioning();
 

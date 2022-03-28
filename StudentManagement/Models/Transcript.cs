@@ -1,4 +1,6 @@
-﻿namespace StudentManagement.Models
+﻿using StudentManagement.Models.Subject;
+
+namespace StudentManagement.Models
 {
     public class Transcript
     {
@@ -8,7 +10,7 @@
         public string Type { get; set; }
         public double Point { get; set; }
         public virtual Student Student { get; set; }
-        public virtual Subject Subject { get; set; }
+        public virtual Subjects Subject { get; set; }
 
     }
 }

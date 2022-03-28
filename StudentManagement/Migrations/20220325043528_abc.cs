@@ -75,11 +75,11 @@ namespace StudentManagement.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ClassId = table.Column<int>(type: "int", nullable: false),
                     Block = table.Column<int>(type: "int", nullable: false),
                     Semester = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SlotPerWeek = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SlotPerWeek = table.Column<int>(type: "int", nullable: false),
                     CreateBy = table.Column<int>(type: "int", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateBy = table.Column<int>(type: "int", nullable: false),
@@ -283,8 +283,8 @@ namespace StudentManagement.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "d4d62d56-d3d4-44ca-b338-f6ac3d8c6dea", "6fbe192b-dd77-423f-b6f9-b8d6386140c4", "User", "USER" },
-                    { "dd2f758d-6257-4aaf-80a4-7532111fb252", "b2442445-3014-438e-b1db-dffc8d815244", "ADMINSTRATOR", "ADMINSTRATOR" }
+                    { "20033862-9838-4779-8005-03367e8ab106", "24e95c7d-7d32-4884-89a2-751d05536e84", "ADMINSTRATOR", "ADMINSTRATOR" },
+                    { "a07cc7de-c2f5-4ea3-bdd6-f7ccf0dfa68d", "df92a4b1-d3fa-4f80-a91e-6f168a1a76eb", "User", "USER" }
                 });
 
             migrationBuilder.InsertData(

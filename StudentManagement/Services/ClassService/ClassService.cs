@@ -32,13 +32,16 @@ namespace StudentManagement.Services.ClassService
         public async Task<Class> UpdateClassAsync(int id, CreateClassDTO createClassDTO)
         {
             var clas = await iunitOfWork.Classes.Get(q => q.Id == (id));
-            if (clas == null)
-            {
-                ilogger.LogError($"Invaild PUT attempt in {nameof(UpdateClassAsync)}");
-                throw new Exception("Class not exit");
-            }
+          
             if (createClassDTO.StudentIds.Count() > 0)
+
             {
+                var students = await iunitOfWork.Students.GetAll(q => q.ClassId == (id));
+                foreach (Student s in students)
+                {
+                    iunitOfWork.Students.Delete(s.Id);
+
+                }
 
                 foreach (int s in createClassDTO.StudentIds)
                 {
@@ -50,8 +53,13 @@ namespace StudentManagement.Services.ClassService
 
             }
             imapper.Map(createClassDTO, clas);
-            iunitOfWork.Students.Update(clas);
-            await iunitOfWork.Save();
+            iunitOfWork.Classes.Update(clas);
+            var check = iunitOfWork.SaveChange();
+            if (check == 0)
+            {
+                throw new Exception("Class not update!");
+            }
+          
             return clas;
         }
     }

@@ -25,14 +25,14 @@ namespace StudentManagement.Services.StudentSerivce
             //var student = imapper.Map<Student>(createStudentDTO);
             if (createStudentDTO.ClassId!=null)
             {
-                var cl = iunitOfWork.Classes.Get(q => q.Id.Equals(createStudentDTO.ClassId));
+                var cl = await iunitOfWork.Classes.Get(q => q.Id==(createStudentDTO.ClassId));
                 //var clas = db.Classes.Where(u => u.Id.Equals(createStudentDTO.ClassId)).FirstOrDefault();
                 if (cl == null)
                 {
                     throw new Exception("ClassId not exit!");
                 }
             }
-            var student = imapper.Map<Student>(createStudentDTO);
+            var student =  imapper.Map<Student>(createStudentDTO);
 
             //var student = new Student();
             //student.Id = Guid.NewGuid().ToString();
@@ -48,7 +48,11 @@ namespace StudentManagement.Services.StudentSerivce
             //student.MotherName = createStudentDTO.MotherName;
             //db.Students.Add(student);
             await iunitOfWork.Students.Insert(student);
-            await iunitOfWork.Save();
+            var check= iunitOfWork.SaveChange();
+            if (check ==0)
+            {
+                throw new Exception("Class not update!");
+            }
             //db.SaveChanges();
             return student;
 

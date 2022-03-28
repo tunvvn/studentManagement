@@ -1,4 +1,6 @@
-﻿namespace StudentManagement.Models
+﻿using StudentManagement.Models.Subject;
+
+namespace StudentManagement.Models
 {
     public class Schedule
     {
@@ -10,7 +12,7 @@
         public System.DateTime CreateDate { get; set; }
         public int UpdateBy { get; set; }
         public System.DateTime UpdateDate { get; set; }
-        public virtual Subject Subject { get; set; }
+        public virtual Subjects Subject { get; set; }
 
     }
 }

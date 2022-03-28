@@ -1,13 +1,17 @@
-﻿namespace StudentManagement.Models
+﻿namespace StudentManagement.Models.Subject
 {
-    public class Subject
+    public class SubjectDTO : CreateSubjectDTO
     {
-        public int Id { get; set; }
-        public string name { get; set; }
+        public int Id;
+    }
+
+    public class CreateSubjectDTO
+    {
+        public string Name { get; set; }
         public int ClassId { get; set; }
         public int Block { get; set; }
         public string Semester { get; set; }
-        public string SlotPerWeek { get; set; }     
+        public int SlotPerWeek { get; set; }
         public int CreateBy { get; set; }
         public System.DateTime CreateDate { get; set; }
         public int UpdateBy { get; set; }
