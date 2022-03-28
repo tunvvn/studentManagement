@@ -14,15 +14,11 @@ namespace StudentManagement.Controllers
     {
 
         private readonly IClassService iclassService;
-        private readonly IUnitOfWork iunitOfWork;
         private readonly ILogger<ClassController> ilogger;
-        private readonly IMapper imapper;
 
-        public ClassController(IUnitOfWork unitofWork, ILogger<ClassController> logger, IMapper mapper, IClassService classService)
+        public ClassController( ILogger<ClassController> logger,  IClassService classService)
         {
-            iunitOfWork = unitofWork;
             ilogger = logger;
-            imapper = mapper;
             iclassService = classService;
         }
 
@@ -32,8 +28,7 @@ namespace StudentManagement.Controllers
         {
             try
             {
-                var uni = await iunitOfWork.Classes.GetPageList(requestParams);
-                var results = imapper.Map<List<ClassDTO>>(uni);
+                var results = iclassService.GetAllClasses(requestParams);
                 return Ok(results);
             }
             catch (Exception ex)
@@ -94,14 +89,8 @@ namespace StudentManagement.Controllers
 
             try
             {
-                var country = await iunitOfWork.Classes.Get(q => q.Id==(id));
-                if (country == null)
-                {
-                    ilogger.LogError($"Invaild PUT attempt in {nameof(DeleteClass)}");
-                    return BadRequest(ModelState);
-                }
-                await iunitOfWork.Classes.Delete(id);
-                await iunitOfWork.Save();
+               
+                await iclassService.DeleteClass(id);
                 return new JsonResult($"Delete Success {id} ");
 
             }

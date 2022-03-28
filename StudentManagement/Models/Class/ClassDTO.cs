@@ -16,6 +16,7 @@ namespace StudentManagement.Models
         public string FormTeacher { get; set; }
 
         public List<int> StudentIds { get; set; }
+
        
     }
 }

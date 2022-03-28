@@ -9,7 +9,7 @@ namespace StudentManagement.Models
         public string Gender { get; set; }
         public DateTime? Birthday { get; set; }
         public string Address { get; set; }
-        public int ClassId { get; set; }
+        public int? ClassId { get; set; }
         public string FatherName { get; set; }
         public string MotherName { get; set; }
         public int CreateBy { get; set; }

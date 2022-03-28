@@ -76,14 +76,7 @@ namespace StudentManagement.Controllers
 
             try
             {
-                /* var country = await iunitOfWork.Classes.Get(q => q.Id == (id));
-                 if (country == null)
-                 {
-                     ilogger.LogError($"Invaild PUT attempt in {nameof(DeleteClass)}");
-                     return BadRequest(ModelState);
-                 }
-                 await iunitOfWork.Classes.Delete(id);
-                 await iunitOfWork.Save();*/
+               
                 iSubjectService.DeleteSubject(id);
                 return new JsonResult($"Delete Success {id} ");
 

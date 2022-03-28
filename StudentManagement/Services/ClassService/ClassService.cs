@@ -3,6 +3,7 @@ using AutoMapper;
 using StudentManagement.Datas;
 using StudentManagement.IRepository;
 using StudentManagement.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace StudentManagement.Services.ClassService
 {
@@ -61,6 +62,40 @@ namespace StudentManagement.Services.ClassService
             }
           
             return clas;
+        }
+
+
+        public async Task<List<ClassDTO>> GetAllClasses([FromQuery] RequestParams requestParams)
+        {
+            var uni = await iunitOfWork.Classes.GetPageList(requestParams);
+            var results = imapper.Map<List<ClassDTO>>(uni);
+            return results;
+        }
+
+        public async Task<bool> DeleteClass(int Id)
+        {
+            var clas = await iunitOfWork.Classes.Get(q => q.Id == (Id));
+            if (clas == null)
+            {
+                ilogger.LogError($"Invaild PUT attempt in {nameof(DeleteClass)}");
+                throw new Exception("invaild subject");
+            }
+            var students = await iunitOfWork.Students.GetAll(q => q.ClassId == Id);
+            foreach (Student s in students)
+                {
+                s.ClassId = null;
+                iunitOfWork.Students.Update(s);
+                }
+            await iunitOfWork.Classes.Delete(Id);
+            var check = iunitOfWork.SaveChange();
+            if (check == 0)
+            {
+                throw new Exception("invaild delete student");
+            }
+            else
+                return true;
+
+
         }
     }
 }

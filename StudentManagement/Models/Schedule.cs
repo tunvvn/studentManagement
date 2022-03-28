@@ -7,7 +7,7 @@ namespace StudentManagement.Models
         public int Id { get; set; } 
         public int DayOfWeek { get; set; }
         public int SubjectId { get; set; }
-        public int slot { get; set; }
+        public int Slot { get; set; }
         public int CreateBy { get; set; }
         public System.DateTime CreateDate { get; set; }
         public int UpdateBy { get; set; }

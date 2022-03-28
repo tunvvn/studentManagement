@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using StudentManagement.Datas;
 using StudentManagement.IRepository;
 using StudentManagement.Models;
@@ -83,6 +84,33 @@ namespace StudentManagement.Services.StudentSerivce
             await iunitOfWork.Save();
             //throw new NotImplementedException();
             return student;
+        }
+
+        public async Task<bool> DeleteStudent(int Id)
+        {
+            var subject = await iunitOfWork.Students.Get(q => q.Id == (Id));
+            if (subject == null)
+            {
+                ilogger.LogError($"Invaild PUT attempt in {nameof(DeleteStudent)}");
+                throw new Exception("invaild subject");
+            }
+            await iunitOfWork.Subjects.Delete(Id);
+            var check = iunitOfWork.SaveChange();
+            if (check == 0)
+            {
+                throw new Exception("invaild delete student");
+            }
+            else
+                return true;
+
+
+        }
+
+        public async Task<List<StudentDTO>> GetAllStudents([FromQuery] RequestParams requestParams)
+        {
+            var uni = await iunitOfWork.Students.GetPageList(requestParams);
+            var results = imapper.Map<List<StudentDTO>>(uni);
+            return results;
         }
     }
 }
