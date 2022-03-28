@@ -28,7 +28,7 @@ namespace StudentManagement.Controllers
         {
             try
             {
-                var results = iclassService.GetAllClasses(requestParams);
+                var results = await iclassService.GetAllClasses(requestParams);
                 return Ok(results);
             }
             catch (Exception ex)
