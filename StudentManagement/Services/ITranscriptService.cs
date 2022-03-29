@@ -9,5 +9,6 @@ namespace StudentManagement.Services
         Task <Transcript> CreateTranscript(CreateTranscriptDTO createSubjectDTO);
         Task <Transcript> UpdateTranscript(int id, CreateTranscriptDTO createTranscriptDTO);
         Task<bool> DeleteTranscript(int id);
+        Task <double> ScoreSummaryBySubject(ScoreSumaryBySubject scoreSumaryBySubject);
     }
 }

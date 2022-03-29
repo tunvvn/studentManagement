@@ -35,19 +35,9 @@ namespace StudentManagement.Services.StudentSerivce
             }
             var student =  imapper.Map<Student>(createStudentDTO);
 
-            //var student = new Student();
-            //student.Id = Guid.NewGuid().ToString();
-            //student.ClassId = createStudentDTO.ClassId;
-            //student.Name = createStudentDTO.Name;
-            //student.Gender = createStudentDTO.Gender;
-            //student.Birthday = createStudentDTO.Birthday;
             student.CreateBy = 1;
             student.UpdateBy = 1;
 
-            //student.CreateDate = System.DateTime.Now;
-            //student.FatherName = createStudentDTO.FatherName;
-            //student.MotherName = createStudentDTO.MotherName;
-            //db.Students.Add(student);
             await iunitOfWork.Students.Insert(student);
             var check= iunitOfWork.SaveChange();
             if (check ==0)
@@ -112,5 +102,8 @@ namespace StudentManagement.Services.StudentSerivce
             var results = imapper.Map<List<StudentDTO>>(uni);
             return results;
         }
+
+
+       
     }
 }

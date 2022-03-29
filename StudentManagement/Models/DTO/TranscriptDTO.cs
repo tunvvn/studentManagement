@@ -9,7 +9,7 @@
     {
         public int StudentId { get; set; }
         public int SubjectId { get; set; }
-        public string Type { get; set; }
+        public TypeEnum Type { get; set; }
         public double Point { get; set; }
     }
 }

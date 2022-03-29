@@ -51,15 +51,15 @@ namespace StudentManagement.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "0828765e-d9fc-411b-b8e0-31e9e0fc01bf",
-                            ConcurrencyStamp = "699861fb-0419-483c-985b-d8ca0aedccc0",
+                            Id = "2f31edde-5c4d-4787-b89e-253f7f8c245b",
+                            ConcurrencyStamp = "17d7497a-3716-425b-ab08-96466c28ca34",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "73a57934-4f81-4d49-845c-41c413432dad",
-                            ConcurrencyStamp = "7adb37e8-91d2-4118-b649-54896285eaf6",
+                            Id = "fa747570-8b09-4189-a4a5-2f137c8ace93",
+                            ConcurrencyStamp = "6c7e89ce-80d6-41de-bab9-4cde2189dee0",
                             Name = "ADMINSTRATOR",
                             NormalizedName = "ADMINSTRATOR"
                         });
@@ -492,7 +492,7 @@ namespace StudentManagement.Migrations
                         });
                 });
 
-            modelBuilder.Entity("StudentManagement.Models.Subject.Subjects", b =>
+            modelBuilder.Entity("StudentManagement.Models.Subjects", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -513,9 +513,8 @@ namespace StudentManagement.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Semester")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Semester")
+                        .HasColumnType("int");
 
                     b.Property<int>("SlotPerWeek")
                         .HasColumnType("int");
@@ -536,36 +535,48 @@ namespace StudentManagement.Migrations
                             Id = 1,
                             Block = 12,
                             CreateBy = 1,
-                            CreateDate = new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9214),
+                            CreateDate = new DateTime(2022, 3, 29, 9, 54, 53, 471, DateTimeKind.Local).AddTicks(6542),
                             Name = "Toan",
-                            Semester = "1",
+                            Semester = 1,
                             SlotPerWeek = 6,
                             UpdateBy = 1,
-                            UpdateDate = new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9202)
+                            UpdateDate = new DateTime(2022, 3, 29, 9, 54, 53, 471, DateTimeKind.Local).AddTicks(6525)
                         },
                         new
                         {
                             Id = 2,
                             Block = 12,
                             CreateBy = 1,
-                            CreateDate = new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9218),
+                            CreateDate = new DateTime(2022, 3, 29, 9, 54, 53, 471, DateTimeKind.Local).AddTicks(6544),
                             Name = "Ly",
-                            Semester = "1",
+                            Semester = 1,
                             SlotPerWeek = 3,
                             UpdateBy = 1,
-                            UpdateDate = new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9217)
+                            UpdateDate = new DateTime(2022, 3, 29, 9, 54, 53, 471, DateTimeKind.Local).AddTicks(6544)
                         },
                         new
                         {
                             Id = 3,
                             Block = 11,
                             CreateBy = 1,
-                            CreateDate = new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9221),
+                            CreateDate = new DateTime(2022, 3, 29, 9, 54, 53, 471, DateTimeKind.Local).AddTicks(6546),
                             Name = "hoa",
-                            Semester = "1",
+                            Semester = 1,
                             SlotPerWeek = 3,
                             UpdateBy = 1,
-                            UpdateDate = new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9220)
+                            UpdateDate = new DateTime(2022, 3, 29, 9, 54, 53, 471, DateTimeKind.Local).AddTicks(6546)
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Block = 11,
+                            CreateBy = 1,
+                            CreateDate = new DateTime(2022, 3, 29, 9, 54, 53, 471, DateTimeKind.Local).AddTicks(6548),
+                            Name = "hoa",
+                            Semester = 2,
+                            SlotPerWeek = 3,
+                            UpdateBy = 1,
+                            UpdateDate = new DateTime(2022, 3, 29, 9, 54, 53, 471, DateTimeKind.Local).AddTicks(6547)
                         });
                 });
 
@@ -592,9 +603,8 @@ namespace StudentManagement.Migrations
                     b.Property<int>("SubjectId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
 
                     b.Property<int>("UpdateBy")
                         .HasColumnType("int");
@@ -664,7 +674,7 @@ namespace StudentManagement.Migrations
 
             modelBuilder.Entity("StudentManagement.Models.Schedule", b =>
                 {
-                    b.HasOne("StudentManagement.Models.Subject.Subjects", "Subject")
+                    b.HasOne("StudentManagement.Models.Subjects", "Subject")
                         .WithMany()
                         .HasForeignKey("SubjectId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -690,7 +700,7 @@ namespace StudentManagement.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("StudentManagement.Models.Subject.Subjects", "Subject")
+                    b.HasOne("StudentManagement.Models.Subjects", "Subject")
                         .WithMany()
                         .HasForeignKey("SubjectId")
                         .OnDelete(DeleteBehavior.Cascade)

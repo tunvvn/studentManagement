@@ -8,9 +8,7 @@ namespace StudentManagement.Datas
 {
     public class DataBaseContext : IdentityDbContext<ApiUser>
     {
-        public DataBaseContext()
-        {
-        }
+       
 
         public DataBaseContext(DbContextOptions dbContextOptions) : base(dbContextOptions)
         {

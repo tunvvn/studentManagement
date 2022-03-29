@@ -3,12 +3,14 @@ using StudentManagement.Models.DTO;
 
 namespace StudentManagement.Models
 {
+
+   
     public class Subjects
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public int Block { get; set; }
-        public string Semester { get; set; }
+        public int Semester { get; set; }
         public int SlotPerWeek { get; set; }     
         public int CreateBy { get; set; }
         public System.DateTime CreateDate { get; set; }
@@ -22,7 +24,10 @@ namespace StudentManagement.Models
         {
             RuleFor(x => x.SlotPerWeek).InclusiveBetween(0, 36);
             RuleFor(x => x.Name).NotNull().NotEmpty().Length(3, 100);
-            RuleFor(x => x.Semester).NotNull().NotEmpty();
+            RuleFor(x => x.Semester).NotNull().NotEmpty().InclusiveBetween(1,2);
+            RuleFor(x => x.Block).InclusiveBetween(1, 12);
+
+
 
             //RuleFor(x => x.Birthday).NotNull().NotEmpty();
 

@@ -77,7 +77,7 @@ namespace StudentManagement.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Block = table.Column<int>(type: "int", nullable: false),
-                    Semester = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Semester = table.Column<int>(type: "int", nullable: false),
                     SlotPerWeek = table.Column<int>(type: "int", nullable: false),
                     CreateBy = table.Column<int>(type: "int", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -256,7 +256,7 @@ namespace StudentManagement.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     StudentId = table.Column<int>(type: "int", nullable: false),
                     SubjectId = table.Column<int>(type: "int", nullable: false),
-                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Type = table.Column<int>(type: "int", nullable: false),
                     Point = table.Column<double>(type: "float", nullable: false),
                     CreateBy = table.Column<int>(type: "int", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -285,8 +285,8 @@ namespace StudentManagement.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "0828765e-d9fc-411b-b8e0-31e9e0fc01bf", "699861fb-0419-483c-985b-d8ca0aedccc0", "User", "USER" },
-                    { "73a57934-4f81-4d49-845c-41c413432dad", "7adb37e8-91d2-4118-b649-54896285eaf6", "ADMINSTRATOR", "ADMINSTRATOR" }
+                    { "2f31edde-5c4d-4787-b89e-253f7f8c245b", "17d7497a-3716-425b-ab08-96466c28ca34", "User", "USER" },
+                    { "fa747570-8b09-4189-a4a5-2f137c8ace93", "6c7e89ce-80d6-41de-bab9-4cde2189dee0", "ADMINSTRATOR", "ADMINSTRATOR" }
                 });
 
             migrationBuilder.InsertData(
@@ -305,9 +305,10 @@ namespace StudentManagement.Migrations
                 columns: new[] { "Id", "Block", "CreateBy", "CreateDate", "Name", "Semester", "SlotPerWeek", "UpdateBy", "UpdateDate" },
                 values: new object[,]
                 {
-                    { 1, 12, 1, new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9214), "Toan", "1", 6, 1, new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9202) },
-                    { 2, 12, 1, new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9218), "Ly", "1", 3, 1, new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9217) },
-                    { 3, 11, 1, new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9221), "hoa", "1", 3, 1, new DateTime(2022, 3, 28, 14, 13, 42, 886, DateTimeKind.Local).AddTicks(9220) }
+                    { 1, 12, 1, new DateTime(2022, 3, 29, 9, 54, 53, 471, DateTimeKind.Local).AddTicks(6542), "Toan", 1, 6, 1, new DateTime(2022, 3, 29, 9, 54, 53, 471, DateTimeKind.Local).AddTicks(6525) },
+                    { 2, 12, 1, new DateTime(2022, 3, 29, 9, 54, 53, 471, DateTimeKind.Local).AddTicks(6544), "Ly", 1, 3, 1, new DateTime(2022, 3, 29, 9, 54, 53, 471, DateTimeKind.Local).AddTicks(6544) },
+                    { 3, 11, 1, new DateTime(2022, 3, 29, 9, 54, 53, 471, DateTimeKind.Local).AddTicks(6546), "hoa", 1, 3, 1, new DateTime(2022, 3, 29, 9, 54, 53, 471, DateTimeKind.Local).AddTicks(6546) },
+                    { 4, 11, 1, new DateTime(2022, 3, 29, 9, 54, 53, 471, DateTimeKind.Local).AddTicks(6548), "hoa", 2, 3, 1, new DateTime(2022, 3, 29, 9, 54, 53, 471, DateTimeKind.Local).AddTicks(6547) }
                 });
 
             migrationBuilder.InsertData(

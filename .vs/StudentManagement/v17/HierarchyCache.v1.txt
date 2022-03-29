@@ -3,13 +3,11 @@ i:{00000000-0000-0000-0000-000000000000}:StudentManagement.sln
 ++StudentManagement
 i:{00000000-0000-0000-0000-000000000000}:StudentManagement
 ++Connected Services 
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>811
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>387
 ++Dependencies
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>810
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>386
 ++Properties
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\properties\
-++launchSettings.json
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\properties\launchsettings.json
 ++Configrurations
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\configrurations\
 ++Entities
@@ -20,6 +18,8 @@ i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanag
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\configrurations\entities\roleconfiguation.cs
 ++StudentConfiguration.cs
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\configrurations\entities\studentconfiguration.cs
+++SubjectConfiguation.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\configrurations\entities\subjectconfiguation.cs
 ++MapperInitializi.cs
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\configrurations\mapperinitializi.cs
 ++Controllers
@@ -32,6 +32,8 @@ i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanag
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\controllers\studentcontroller.cs
 ++SubjectController.cs
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\controllers\subjectcontroller.cs
+++TranscriptController.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\controllers\transcriptcontroller.cs
 ++Datas
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\datas\
 ++ApiUser.cs
@@ -46,36 +48,40 @@ i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanag
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\irepository\iunitofwork.cs
 ++Migrations
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\migrations\
+++20220329025453_abc.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\migrations\20220329025453_abc.cs
+++DataBaseContextModelSnapshot.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\migrations\databasecontextmodelsnapshot.cs
 ++Models
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\
-++Class
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\class\
-++Class.cs
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\class\class.cs
+++DTO
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\dto\
 ++ClassDTO.cs
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\class\classdto.cs
-++Student
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\student\
-++Student.cs
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\student\student.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\dto\classdto.cs
+++ScoreSumaryBySubject.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\dto\scoresumarybysubject.cs
 ++StudentDTO.cs
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\student\studentdto.cs
-++Subject
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\subject\
-++Subject.cs
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\subject\subject.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\dto\studentdto.cs
 ++SubjectDTO.cs
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\subject\subjectdto.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\dto\subjectdto.cs
+++TranscriptDTO.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\dto\transcriptdto.cs
+++UserDTO.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\dto\userdto.cs
+++Class.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\class.cs
 ++Error.cs
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\error.cs
 ++RequestParams.cs
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\requestparams.cs
 ++Schedule.cs
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\schedule.cs
+++Student.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\student.cs
+++Subject.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\subject.cs
 ++Transcript.cs
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\transcript.cs
-++UserDTO.cs
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\models\userdto.cs
 ++Repository
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\repository\
 ++GenericRespository.cs
@@ -84,16 +90,28 @@ i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanag
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\repository\unitofwork.cs
 ++Services
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\
-++ClassService
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\classservice\
-++StudentSerivce
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\studentserivce\
-++SubjectService
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\subjectservice\
+++ServiceImpl
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\serviceimpl\
+++ClassService.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\serviceimpl\classservice.cs
+++StudentService.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\serviceimpl\studentservice.cs
+++SubjectService.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\serviceimpl\subjectservice.cs
+++TranscriptService.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\serviceimpl\transcriptservice.cs
 ++AuthManager.cs
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\authmanager.cs
 ++IAuthManager.cs
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\iauthmanager.cs
+++IClassService.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\iclassservice.cs
+++IStudentService.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\istudentservice.cs
+++ISubjectService.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\isubjectservice.cs
+++ITranscriptService.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\itranscriptservice.cs
 ++appsettings.json
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\appsettings.json
 ++Program.cs
@@ -101,25 +119,17 @@ i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanag
 ++ServiceExtensions.cs
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\serviceextensions.cs
 ++No service dependencies discovered
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>812
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>388
 ++Analyzers
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:analyzers
 ++Frameworks
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:frameworks
 ++Packages
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:packages
-++ClassService.cs
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\classservice\classservice.cs
-++IClassService.cs
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\classservice\iclassservice.cs
-++IStudentService.cs
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\studentserivce\istudentservice.cs
-++StudentService.cs
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\studentserivce\studentservice.cs
-++ISubjectService.cs
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\subjectservice\isubjectservice.cs
-++SubjectService.cs
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\services\subjectservice\subjectservice.cs
+++launchSettings.json
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\properties\launchsettings.json
+++20220329025453_abc.Designer.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\migrations\20220329025453_abc.designer.cs
 ++appsettings.Development.json
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\appsettings.development.json
 ++Microsoft.AspNetCore.Analyzers
@@ -151,58 +161,46 @@ i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanag
 ++Microsoft.NETCore.App
 i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\microsoft.netcore.app
 ++AspNetCoreRateLimit (4.0.2)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>841
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>410
 ++AutoMapper (11.0.1)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>843
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>412
 ++AutoMapper.Extensions.Microsoft.DependencyInjection (11.0.0)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>833
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>402
 ++FluentValidation.AspNetCore (10.4.0)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>836
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>405
 ++Marvin.Cache.Headers (6.0.0)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>844
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>413
 ++Microsoft.AspNetCore.Authentication (2.2.0)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>837
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>406
 ++Microsoft.AspNetCore.Authentication.JwtBearer (6.0.3)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>846
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>415
 ++Microsoft.AspNetCore.Http (2.2.2)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>845
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>414
 ++Microsoft.AspNetCore.Identity.EntityFrameworkCore (6.0.3)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>839
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>408
 ++Microsoft.AspNetCore.Mvc.Core (2.2.5)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>848
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>417
 ++Microsoft.AspNetCore.Mvc.NewtonsoftJson (6.0.3)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>838
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>407
 ++Microsoft.AspNetCore.Mvc.Versioning (5.0.0)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>830
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>399
 ++Microsoft.EntityFrameworkCore (6.0.3)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>831
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>400
 ++Microsoft.EntityFrameworkCore.SqlServer (6.0.3)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>832
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>401
 ++Microsoft.EntityFrameworkCore.Tools (6.0.3)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>849
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>418
 ++Microsoft.Extensions.Configuration (6.0.1)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>847
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>416
 ++Microsoft.Extensions.DependencyInjection (6.0.0)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>842
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>411
 ++Serilog (2.10.0)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>850
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>419
 ++Serilog.AspNetCore (5.0.0)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>835
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>404
 ++Swashbuckle.AspNetCore (6.2.3)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>834
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>403
 ++System.Configuration.ConfigurationManager (6.0.0)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>840
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>409
 ++X.PagedList (8.1.0)
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>851
-++20220325043528_abc.cs
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\migrations\20220325043528_abc.cs
-++20220325043528_abc.Designer.cs
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\migrations\20220325043528_abc.designer.cs
-++DataBaseContextModelSnapshot.cs
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\migrations\databasecontextmodelsnapshot.cs
-++SubjectConfiguation.cs
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\configrurations\entities\subjectconfiguation.cs
-++20220325044719_xxx.cs
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\migrations\20220325044719_xxx.cs
-++20220325044719_xxx.Designer.cs
-i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:i:\gitv2\studentmanagement\studentmanagement\migrations\20220325044719_xxx.designer.cs
+i:{6f8f4503-558a-4f4b-bb14-4ca1ee4b929a}:>420

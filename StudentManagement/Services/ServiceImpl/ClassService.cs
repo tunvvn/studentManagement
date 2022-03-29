@@ -9,7 +9,7 @@ namespace StudentManagement.Services.ClassService
 {
     public class ClassService : IClassService
     {
-        private IUnitOfWork iunitOfWork;
+        private readonly IUnitOfWork iunitOfWork;
         private readonly ILogger<ClassService> ilogger;
         private readonly IMapper imapper;
 

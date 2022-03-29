@@ -107,6 +107,29 @@ namespace StudentManagement.Controllers
 
             }
         }
+        //[Authorize(Roles = "ADMINSTRATOR")]
+        [HttpPost("/ScoreSumaryBySubject")]
+        public async Task<IActionResult> ScoreSummaryBySubject([FromBody] ScoreSumaryBySubject scoreSumaryBySubject)
+        {
+            if (!ModelState.IsValid)
+            {
+                ilogger.LogError($"Invaild POST attempt in {nameof(ScoreSummaryBySubject)}");
+                return BadRequest(ModelState);
+            }
+            try
+            {
+                var transcript = await itranscriptService.ScoreSummaryBySubject(scoreSumaryBySubject);
+                return Ok(transcript);
+                //return Ok(200);
+            }
+            catch (Exception e)
+            {
+                ilogger.LogError(e, $"Something Wrong {nameof(ScoreSummaryBySubject)}");
+                return StatusCode(500);
+
+            }
+        }
+
 
     }
 }
